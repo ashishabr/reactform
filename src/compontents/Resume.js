@@ -1,5 +1,7 @@
 import React, { useCallback, useRef, useState } from 'react'
 import ReactTags from 'react-tag-autocomplete'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckSquare, faCoffee } from '@fortawesome/fontawesome-free-solid'
 // import Experience from './Experience'
 // import Education from './Education'
 import rimg from './images/image-1.png';
@@ -121,38 +123,39 @@ const Resume = (props) => {
                 </div>
               {
                 index ? 
-                  <button type="button"  className="remove" onClick={() => removeFormFieldsed(index)}>Remove Education</button> 
+                <span className='rembtn' onClick={() => removeFormFieldsed(index)}><FontAwesomeIcon icon="trash" /></span>
                 : null
               }
             </div>
             
           ))}
           <div className="button-section">
-              <button className="add" type="button" onClick={() => addFormFieldsed()}>Add Education</button>
+          <span className='addbtn' onClick={() => addFormFieldsed()}><FontAwesomeIcon icon="plus" /></span>
           </div>
                     {/* <Education/> */}
                     
               {formValues.map((element, index) => (
                   
 
-                  <div className="wrap-input100 validate-input m-b-26" data-validate="Username is required" key={index}>
+                  <div style={{ width: '100%'}} className="wrap-input100 validate-input m-b-26" data-validate="Username is required" key={index}>
                       <div className="form-holder  col-md-4">
                           <span className="lnr lnr-lock"></span>
                           <p className="exp_h">Experience  { index ?  index+1 : null }</p>
                           <input required style={{display: 'inline-block', width: '30%', padding: "3px 0px 0px",margin: "5px"}} name="company" type="text" className="form-control" placeholder="Company" value={element.company || ""} onChange={e => handleChangeexp(index, e)}/>
-                          <input required style={{display: 'inline-block', width: '30%', padding: "3px 0px 0px",margin: "5px"}} name="year" type="text" className="form-control" placeholder="Year" value={element.year || ""} onChange={e => handleChangeexp(index, e)}/>
+                          <input required style={{display: 'inline-block', width: '20%', padding: "3px 0px 0px",margin: "5px"}} name="year" type="text" className="form-control" placeholder="Year" value={element.year || ""} onChange={e => handleChangeexp(index, e)}/>
                           <input required style={{display: 'inline-block', width: '30%', padding: "3px 0px 0px",margin: "5px"}} name="designation" type="text" className="form-control" placeholder="Designation" value={element.designation || ""} onChange={e => handleChangeexp(index, e)}/>
                       </div>
                     {
                       index ? 
-                        <button type="button"  className="remove" onClick={() => removeFormFields(index)}>Remove Experience</button> 
+                        <span className='rembtn' onClick={() => removeFormFields(index)}><FontAwesomeIcon icon="trash" /></span>
                       : null
                     }
                   </div>
                   
                 ))}
                 <div className="button-section">
-                    <button className="add" type="button" onClick={() => addFormFields()}>Add Experience</button>
+                  <span className='addbtn' onClick={() => addFormFields()}><FontAwesomeIcon icon="plus" /></span>
+                    {/* <button className="add" type="button" onClick={() => addFormFields()}>Add Experience</button> */}
                 </div>
                     {/* <Experience setExp={setExpi}/> */}
                     <div style={{margin: "20px 0"}}>

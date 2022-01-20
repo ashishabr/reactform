@@ -137,7 +137,21 @@ h3 {
     transform: translateY(1px); }
   .form-control:focus {
     border-bottom: 1px solid #accffe; }
-
+.addbtn
+{
+  color: green;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 5px;
+}
+.rembtn
+{
+  color: rgb(233 35 8);
+  font-size: 14px;
+  cursor: pointer;
+  margin: -50px -15px;
+  float: right;
+}
 button:not(.react-tags__selected-tag) {
   border: none;
   width: 100%;
